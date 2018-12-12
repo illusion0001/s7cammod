@@ -1,0 +1,7 @@
+id=s7cammod
+name=4k60 Camera Mod (Samsung Galaxy S7)
+version=7.6.39-1.0.0
+versionCode=1
+author=Cvolton
+description=Enable UHD @ 60 FPS, QHD @ 120 FPS, up to 6400 ISO and 90 seconds shutter speed on Exynos S7 models
+minMagisk=17000
