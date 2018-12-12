@@ -1,5 +1,6 @@
 # 4k60 Camera Mod
 ### For Samsung Galaxy S7 (Edge) Exynos
+Compatibility with other Samsung devices is likely but not guaranteed
 
 [Telegram Group](https://t.me/note8_4K60FPS)
 
@@ -17,8 +18,11 @@
 
 ## Compatibility
 * Magisk 17+
-* Any Exynos based S7 running a Samsung Experience Android 8.0.0 Oreo ROM
+* Any Exynos based S7 (and other Samsung devices possibly too) running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-1.0.1
+* Added a device check
+
 ### 7.6.39-1.0.0
 * Initial Release

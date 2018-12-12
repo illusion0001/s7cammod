@@ -40,9 +40,9 @@ LATESTARTSERVICE=false
 # Set what you want to show when installing your mod
 
 print_modname() {
-  ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
-  ui_print "*******************************"
+  ui_print "*********************************************"
+  ui_print "     4k60 Camera Mod (Samsung Galaxy S7)     "
+  ui_print "*********************************************"
 }
 
 ##########################################################################################
@@ -97,3 +97,26 @@ set_permissions() {
 # difficult for you to migrate your modules to newer template versions.
 # Make update-binary as clean as possible, try to only do function calls in it.
 
+version_check() {
+  if [ "$(grep_prop ro.build.version.sdk)" == "$1" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if ! version_check "26"; then
+  abort "This module is only compatible with Android 8.0.0."
+fi
+
+soc_check() {
+  if [ "$(grep_prop ro.board.platform)" == "$1" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if ! soc_check "exynos5"; then
+  abort "This module is only compatible with Exynos based devices."
+fi
