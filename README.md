@@ -8,6 +8,7 @@
 * Unlock Pro mode for Slow Motion resolutions
 * Custom ISO values in Pro mode (up to 6400)
 * Custom long exposure Shutter Speed values (up to 90 seconds)
+* Unlock Shutter Speeds slower than 1/30 for recording
 * Enable HDR in UHD resolutions
 * Remove Low Battery Flash Limit at 15%.
 * Change Quick Launch Key from Home to Power in the settings and vice-versa
@@ -21,6 +22,9 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-2.0.1
+* Created alternate APK for people who don't want to patch libexynoscamera.so
+
 ### 7.6.39-2.0.0
 * Started using the Unity installer
 * Improved compatibility with other devices
