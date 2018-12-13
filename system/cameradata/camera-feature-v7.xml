@@ -140,5 +140,4 @@
 
     <!-- Quick launch features -->
     <local name="CAMERA_QUICK_LAUNCH_USING_HOME_KEY" value="true"/>
-
-</resources>
+    <local name="CAMERA_QUICK_LAUNCH_USING_POWER_KEY" value="true"/>

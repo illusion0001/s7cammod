@@ -1,6 +1,5 @@
 # 4k60 Camera Mod
-### For Samsung Galaxy S7 (Edge) Exynos
-Compatibility with other Samsung devices is likely but not guaranteed
+### For Samsung Exynos devices
 
 [Telegram Group](https://t.me/note8_4K60FPS)
 
@@ -11,6 +10,7 @@ Compatibility with other Samsung devices is likely but not guaranteed
 * Custom long exposure Shutter Speed values (up to 90 seconds)
 * Enable HDR in UHD resolutions
 * Remove Low Battery Flash Limit at 15%.
+* Change Quick Launch Key from Home to Power in the settings and vice-versa
 
 ## How to install:
 * Install the zip
@@ -18,9 +18,13 @@ Compatibility with other Samsung devices is likely but not guaranteed
 
 ## Compatibility
 * Magisk 17+
-* Any Exynos based S7 (and other Samsung devices possibly too) running a Samsung Experience Android 8.0.0 Oreo ROM
+* Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-2.0.0
+* Started using the Unity installer
+* Improved compatibility with other devices
+
 ### 7.6.39-1.0.1
 * Added a device check
 
