@@ -22,6 +22,9 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-2.0.2
+* Added device specific defaults
+
 ### 7.6.39-2.0.1
 * Created alternate APK for people who don't want to patch libexynoscamera.so
 
