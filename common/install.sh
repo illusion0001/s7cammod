@@ -101,67 +101,111 @@ FINISH=FALSE
 if device_check "herolte" || device_check "hero2lte"; then
   ui_print " "
   ui_print "- Select Option -"
-  ui_print "  [?] Samsung Galaxy S7 Detected - Do you want to load defaults?"
+  ui_print "  [?] Samsung Galaxy S7 (Edge) Detected"
+  ui_print "  [?] Do you want to load the following settings?"
+  ui_print "      (Recommended)"
   ui_print ""
-  ui_print "    -    libexynoscamera.so mod: Enabled (S7)"
-  ui_print "    - 18.5:9 resolution support: Disabled"
-  ui_print "    -  Dual camera lens support: Disabled"
+  ui_print "    -     libexynoscamera.so mod: Enabled (S7)"
+  ui_print "    -  18.5:9 resolution support: Disabled"
+  ui_print "    -   Dual camera lens support: Disabled"
+  ui_print "    - 8MP + Autofocus selfie cam: Disabled"
   ui_print ""
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
-    MODLIB=true
+    MODLIBALTAPK=false
+    MODLIBS7=true
     SEIGHT=false
     NEIGHT=false
+    SEIGHTSELFIE=false
     FINISH=true
+  else
+    FINISH=false
   fi
 fi
 
-if device_check "dreamlte"; then
+if device_check "dreamlte" || device_check "dream2lte"; then
   ui_print " "
   ui_print "- Select Option -"
-  ui_print "  [?] Samsung Galaxy S8 Detected - Do you want to load defaults?"
+  ui_print "  [?] Samsung Galaxy S8(+) Detected"
+  ui_print "  [?] Do you want to load the following settings?"
+  ui_print "      (Recommended)"
   ui_print ""
-  ui_print "    -    libexynoscamera.so mod: Disabled (Not available)"
-  ui_print "    - 18.5:9 resolution support: Enabled"
-  ui_print "    -  Dual camera lens support: Disabled"
+  ui_print "    -     libexynoscamera.so mod: Disabled (Not available)"
+  ui_print "    -  18.5:9 resolution support: Enabled"
+  ui_print "    -   Dual camera lens support: Disabled"
+  ui_print "    - 8MP + Autofocus selfie cam: Enabled"
   ui_print ""
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
-    MODLIB=false
+    MODLIBALTAPK=true
     SEIGHT=true
     NEIGHT=false
+    SEIGHTSELFIE=true
     FINISH=true
+  else
+    FINISH=false
   fi
 fi
 
-if device_check "dream2lte" || device_check "greatlte"; then
+if device_check "greatlte"; then
   ui_print " "
   ui_print "- Select Option -"
-  ui_print "  [?] Samsung Galaxy S8+ or Note 8 Detected - Do you want to load defaults?"
+  ui_print "  [?] Samsung Galaxy Note 8 Detected"
+  ui_print "  [?] Do you want to load the following settings?"
+  ui_print "      (Recommended)"
   ui_print ""
-  ui_print "    -    libexynoscamera.so mod: Disabled (Not available)"
-  ui_print "    - 18.5:9 resolution support: Enabled"
-  ui_print "    -  Dual camera lens support: Enabled"
+  ui_print "    -     libexynoscamera.so mod: Enabled (N8)"
+  ui_print "    -  18.5:9 resolution support: Enabled"
+  ui_print "    -   Dual camera lens support: Enabled"
+  ui_print "    - 8MP + Autofocus selfie cam: Enabled"
   ui_print ""
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
-    MODLIB=false
+    MODLIBALTAPK=false
+    MODLIBN8=true
     SEIGHT=true
     NEIGHT=true
+    SEIGHTSELFIE=true
     FINISH=true
+  else
+    FINISH=false
   fi
 fi
 
-if !$FINISH; then
+if ! $FINISH; then
   ui_print " "
   ui_print "- Select Option -"
   ui_print "   Do you want to modify libexynoscamera.so?:"
-  ui_print "(Enables over 10s shutter speed, only compatible with the S7)"
+  ui_print "(Enables over 10s shutter speed,"
+  ui_print "only compatible with the S7 and Note 8)"
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
-    MODLIB=true
+    ui_print " "
+    ui_print "- Select Option -"
+    ui_print "   Choose version?:"
+    ui_print "   Vol Up = S7, Vol Down = Note 8"
+    if $FUNCTION; then 
+      MODLIBALTAPK=false
+      MODLIBS7=true
+    else 
+      MODLIBALTAPK=false
+      MODLIBS7=false
+      MODLIBN8=true
+    fi
   else 
-    MODLIB=false
+    ui_print " "
+    ui_print "- Select Option -"
+    ui_print "   Do you want to enable features"
+    ui_print "   requiring the modded lib anyway?:"
+    ui_print "(only enable if you're going to provide your own one)"
+    ui_print "   Vol Up = Yes, Vol Down = No"
+    if $FUNCTION; then 
+      MODLIBALTAPK=false
+    else 
+      MODLIBALTAPK=true
+    fi
+    MODLIBS7=false
+    MODLIBN8=false
   fi
 
   ui_print " "
@@ -184,6 +228,17 @@ if !$FINISH; then
   else 
     NEIGHT=false
   fi
+
+  ui_print " "
+  ui_print "- Select Option -"
+  ui_print "   Use S8 preset for selfie camera (8 MP + Autofocus enabled)"
+  ui_print "or S7 preset (5 MP + Autofocus disabled)?"
+  ui_print "   Vol Up = S8, Vol Down = S7"
+  if $FUNCTION; then 
+    SEIGHTSELFIE=true
+  else 
+    SEIGHTSELFIE=false
+  fi
 fi
 
 ui_print ""
@@ -192,17 +247,44 @@ ui_print "= Installing ="
 ui_print "=============="
 ui_print ""
 
-if $MODLIB; then
+if $MODLIBS7; then
   ui_print "Installing Samsung Galaxy S7 modded libexynoscamera.so"
   cp -f $INSTALLER/device_specific/S7/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
 else
+  if $MODLIBN8; then
+    ui_print "Installing Samsung Galaxy Note 8 modded libexynoscamera.so"
+    cp -f $INSTALLER/device_specific/N8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
+  fi
+fi
+
+if $MODLIBALTAPK; then
+  ui_print "Installing alternate APK with modded lib features disabled"
   cp -f $INSTALLER/device_specific/nolibapk/SamsungCamera7.apk  $INSTALLER/system/priv-app/SamsungCamera7/SamsungCamera7.apk
 fi
 
 if $SEIGHT; then
   ui_print "Enabling 18.5:9 support"
   echo '<local name="BACK_CAMCORDER_RESOLUTION_2224X1080" value="true" hdr="true" preview-size="2224x1080" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1920X936" value="true" hdr="true" preview-size="1920x936" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+    <local name="BACK_CAMCORDER_RESOLUTION_1920X936" value="true" hdr="true" preview-size="1920x936" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
+    <local name="FRONT_CAMERA_RESOLUTION_18DOT5BY9" value="3264x1592" />
+    <local name="BACK_CAMERA_RESOLUTION_18DOT5BY9" value="4032x1960" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+fi
+
+if $SEIGHTSELFIE; then
+  ui_print "Using Galaxy S8 settings for the front facing camera (Autofocus enabled + 8 MP)"
+  echo '    <local name="FRONT_CAMERA_RESOLUTION_18DOT5BY9" value="3264x1592" />
+    <local name="FRONT_CAMERA_RESOLUTION_16BY9_LARGE" value="3264x1836" />
+    <local name="FRONT_CAMERA_RESOLUTION_4BY3_LARGE" value="3264x2448" />
+    <local name="FRONT_CAMERA_RESOLUTION_1BY1_LARGE" value="2448x2448" />
+    <local name="FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="3264x2448" />
+    <local name="SUPPORT_FRONT_AF" value="true" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+else
+  ui_print "Using Galaxy S7 settings for the front facing camera (Autofocus disabled + 5 MP)"
+  echo '    <local name="FRONT_CAMERA_RESOLUTION_16BY9_LARGE" value="2592x1458" />
+    <local name="FRONT_CAMERA_RESOLUTION_4BY3_LARGE" value="2592x1944" />
+    <local name="FRONT_CAMERA_RESOLUTION_1BY1_LARGE" value="1936x1936" />
+    <local name="FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="2592x1944" />
+    <local name="SUPPORT_FRONT_AF" value="false" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
 fi
 
 if $NEIGHT; then

@@ -6,6 +6,7 @@
 ## Features:
 * UHD @ 60 FPS, QHD @ 120 FPS and more custom resolutions
 * Unlock Pro mode for Slow Motion resolutions
+* Unlock Auto mode for front camera - Disable post-processing
 * Custom ISO values in Pro mode (up to 6400)
 * Custom long exposure Shutter Speed values (up to 90 seconds)
 * Unlock Shutter Speeds slower than 1/30 for recording
@@ -22,6 +23,14 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-2.0.3
+* Improved S8/N8 compatibility
+** Fixed S8+ device recognition
+** Created Note 8 modded lib
+** Fixed selfie camera crash
+** Fixed 60 FPS modes for the N8
+* Fixed the Unity installer
+
 ### 7.6.39-2.0.2
 * Added device specific defaults
 
