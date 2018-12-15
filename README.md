@@ -25,10 +25,10 @@
 ## Changelog
 ### 7.6.39-2.0.3
 * Improved S8/N8 compatibility
-** Fixed S8+ device recognition
-** Created Note 8 modded lib
-** Fixed selfie camera crash
-** Fixed 60 FPS modes for the N8
+  * Fixed S8+ device recognition
+  * Created Note 8 modded lib
+  * Fixed selfie camera crash
+  * Fixed 60 FPS modes for the N8
 * Fixed the Unity installer
 
 ### 7.6.39-2.0.2
