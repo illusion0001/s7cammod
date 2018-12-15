@@ -92,7 +92,7 @@
     <!--<local name="BACK_CAMCORDER_RESOLUTION_640X360" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true"/>-->
     <local name="BACK_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <!--<local name="BACK_CAMCORDER_RESOLUTION_400X240" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true"/>-->
-    <local name="BACK_CAMCORDER_RESOLUTION_176X144_10FPS" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_176X144_10FPS" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="false"/>
     <local name="BACK_CAMCORDER_RESOLUTION_176X144" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
 
     <!-- Recording resolution - FRONT -->

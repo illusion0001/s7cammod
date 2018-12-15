@@ -23,6 +23,12 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.39-2.0.4
+* Fixed a bug where it installed N8 lib on S8 by default
+* Fixed a bug in the N8 lib itself
+* Made it automatically clear ShootingModeProvider's data to avoid bugs
+* Fixed QCIF 10 FPS on the N8
+
 ### 7.6.39-2.0.3
 * Improved S8/N8 compatibility
   * Fixed S8+ device recognition

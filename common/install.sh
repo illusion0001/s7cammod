@@ -114,6 +114,7 @@ if device_check "herolte" || device_check "hero2lte"; then
   if $FUNCTION; then 
     MODLIBALTAPK=false
     MODLIBS7=true
+    MODLIBN8=false
     SEIGHT=false
     NEIGHT=false
     SEIGHTSELFIE=false
@@ -138,6 +139,8 @@ if device_check "dreamlte" || device_check "dream2lte"; then
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     MODLIBALTAPK=true
+    MODLIBS7=false
+    MODLIBN8=false
     SEIGHT=true
     NEIGHT=false
     SEIGHTSELFIE=true
@@ -162,6 +165,7 @@ if device_check "greatlte"; then
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     MODLIBALTAPK=false
+    MODLIBS7=false
     MODLIBN8=true
     SEIGHT=true
     NEIGHT=true
@@ -272,8 +276,7 @@ fi
 
 if $SEIGHTSELFIE; then
   ui_print "Using Galaxy S8 settings for the front facing camera (Autofocus enabled + 8 MP)"
-  echo '    <local name="FRONT_CAMERA_RESOLUTION_18DOT5BY9" value="3264x1592" />
-    <local name="FRONT_CAMERA_RESOLUTION_16BY9_LARGE" value="3264x1836" />
+  echo '  <local name="FRONT_CAMERA_RESOLUTION_16BY9_LARGE" value="3264x1836" />
     <local name="FRONT_CAMERA_RESOLUTION_4BY3_LARGE" value="3264x2448" />
     <local name="FRONT_CAMERA_RESOLUTION_1BY1_LARGE" value="2448x2448" />
     <local name="FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="3264x2448" />
@@ -295,3 +298,8 @@ if $NEIGHT; then
     <local name=\"SUPPORT_ZOOM_IN_OUT_PHOTO\" value=\"true\"/>
     <local name=\"SUPPORT_JUMP_ZOOM_BUTTON\" value=\"true\"/>" >> $INSTALLER/system/cameradata/camera-feature-v7.xml
 fi
+
+echo '</resources>' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+
+ui_print "Clearing ShootingModeProvider's data"
+rm -rf '/data/data/com.samsung.android.provider.shootingmodeprovider'
