@@ -23,6 +23,10 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.86-2.1.0
+* Updated the base APK to 7.6.86 (taken from the S7)
+* Added 1080p240
+
 ### 7.6.39-2.0.4
 * Fixed a bug where it installed N8 lib on S8 by default
 * Fixed a bug in the N8 lib itself
