@@ -181,20 +181,34 @@ if ! $FINISH; then
   ui_print "- Select Option -"
   ui_print "   Do you want to modify libexynoscamera.so?:"
   ui_print "(Enables over 10s shutter speed,"
-  ui_print "only compatible with the S7 and Note 8)"
+  ui_print "only compatible with the S7, S8 and Note 8)"
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     ui_print " "
     ui_print "- Select Option -"
     ui_print "   Choose version?:"
-    ui_print "   Vol Up = S7, Vol Down = Note 8"
+    ui_print "   Vol Up = S7, Vol Down = Other (S8/N8)"
     if $FUNCTION; then 
       MODLIBALTAPK=false
       MODLIBS7=true
+      MODLIBS8=false
+      MODLIBN8=false
     else 
-      MODLIBALTAPK=false
-      MODLIBS7=false
-      MODLIBN8=true
+      ui_print " "
+      ui_print "- Select Option -"
+      ui_print "   Choose version?:"
+      ui_print "   Vol Up = S8, Vol Down = Note 8"
+      if $FUNCTION; then 
+        MODLIBALTAPK=false
+        MODLIBS7=false
+        MODLIBS8=true
+        MODLIBN8=false
+      else 
+        MODLIBALTAPK=false
+        MODLIBS7=false
+        MODLIBS8=false
+        MODLIBN8=true
+      fi
     fi
   else 
     ui_print " "
@@ -255,9 +269,14 @@ if $MODLIBS7; then
   ui_print "Installing Samsung Galaxy S7 modded libexynoscamera.so"
   cp -f $INSTALLER/device_specific/S7/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
 else
-  if $MODLIBN8; then
-    ui_print "Installing Samsung Galaxy Note 8 modded libexynoscamera.so"
-    cp -f $INSTALLER/device_specific/N8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
+  if $MODLIBS8; then
+    ui_print "Installing Samsung Galaxy S8 modded libexynoscamera.so"
+    cp -f $INSTALLER/device_specific/S8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
+  else
+    if $MODLIBN8; then
+      ui_print "Installing Samsung Galaxy Note 8 modded libexynoscamera.so"
+      cp -f $INSTALLER/device_specific/N8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
+    fi
   fi
 fi
 

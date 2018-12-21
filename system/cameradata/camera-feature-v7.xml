@@ -40,6 +40,7 @@
     <local name="FRONT_CAMERA_SHOOTINGMODE_MOTION_WIDE_SELFIE" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SCENE" value="true" />
+    <local name="FRONT_CAMERA_SHOOTINGMODE_PRO" value="true" /> <!-- prolite doesn't exist here because i never made it -->
     <local name="FRONT_CAMERA_SHOOTINGMODE_SELECTIVE_FOCUS" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_SELFIE" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_SHOT_AND_MORE" value="false" />
@@ -67,18 +68,18 @@
     <!-- Recording resolution - BACK -->
     <local name="BACK_CAMERA_RECORDING_DEFAULT_RESOLUTION" value="1920x1080"/>
     <local name="BACK_CAMERA_RECORDING_MIN_RESOLUTION" value="640x480"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false"  seamless-zoom-support="true"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="false" object-tracking="false"  seamless-zoom-support="true"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_60FPS" value="true" hdr="false" preview-size="1920x1080" snapshot-support="false" snapshot-size="4032x2268" vdis="true" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_120FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_240FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_2560X1440_120FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1280X720_240FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_60FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_50FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_48FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_25FPS" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_24FPS" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true"  seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true"  seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_60FPS" value="true" hdr="false" preview-size="1920x1080" snapshot-support="false" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_120FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_240FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_2560X1440_120FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_1280X720_240FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_60FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_50FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_48FPS" value="true" hdr="false" preview-size="3840x2160" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_25FPS" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160_24FPS" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
     <local name="BACK_CAMCORDER_RESOLUTION_1920X1080" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <!--<local name="BACK_CAMCORDER_RESOLUTION_2224X1080" value="true" hdr="true" preview-size="2224x1080" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_1920X936" value="true" hdr="true" preview-size="1920x936" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>-->
@@ -87,14 +88,14 @@
     <!--<local name="BACK_CAMCORDER_RESOLUTION_1072X1072" value="true" hdr="true" preview-size="1088x1088" snapshot-support="true" snapshot-size="3024x3024" vdis="false" effect="true" object-tracking="true"/>-->
     <local name="BACK_CAMCORDER_RESOLUTION_1280X720" value="true" hdr="true" preview-size="1280x720" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_960X720" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="720x480" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_640X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_800X450" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <!--<local name="BACK_CAMCORDER_RESOLUTION_640X360" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true"/>-->
     <local name="BACK_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
     <!--<local name="BACK_CAMCORDER_RESOLUTION_400X240" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true"/>-->
-    <local name="BACK_CAMCORDER_RESOLUTION_176X144_10FPS" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="false"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_176X144" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_176X144_10FPS" value="true" hdr="true" preview-size="176x144" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_176X144" value="true" hdr="true" preview-size="176x144" snapshot-support="true" snapshot-size="4032x3024" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="true"/>
 
     <!-- Recording resolution - FRONT -->
     <local name="FRONT_CAMERA_RECORDING_DEFAULT_RESOLUTION" value="1920x1080"/>
@@ -103,8 +104,8 @@
     <local name="FRONT_CAMCORDER_RESOLUTION_1920X1080" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
     <local name="FRONT_CAMCORDER_RESOLUTION_1440X1440" value="true" hdr="true" preview-size="1072x1072" snapshot-support="true" snapshot-size="1936x1936" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
     <local name="FRONT_CAMCORDER_RESOLUTION_1280X720" value="true" hdr="true" preview-size="1280x720" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="true" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="720x480" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
     <local name="FRONT_CAMCORDER_RESOLUTION_640X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true"  snapshot-size="2592x1944" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
     <local name="FRONT_CAMCORDER_RESOLUTION_176X144" value="true"/>
 

@@ -5,11 +5,14 @@
 
 ## Features:
 * UHD @ 60 FPS, QHD @ 120 FPS and more custom resolutions
+* Change audio bitrate, video encoder (enable HEVC), video bitrate
+* Front facing camera Pro Mode
 * Unlock Pro mode for Slow Motion resolutions
 * Unlock Auto mode for front camera - Disable post-processing
 * Custom ISO values in Pro mode (up to 6400)
 * Custom long exposure Shutter Speed values (up to 90 seconds)
 * Unlock Shutter Speeds slower than 1/30 for recording
+* Change ISO while recording
 * Enable HDR in UHD resolutions
 * Remove Low Battery Flash Limit at 15%.
 * Change Quick Launch Key from Home to Power in the settings and vice-versa
@@ -23,6 +26,20 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.86-2.2.0
+* Fixed UHFR modes for non-S7 devices
+* Made Samsung Gallery recognize UHFR videos as Slow Motion
+* Enabled AF/AE tracking for all non-UHFR modes
+* Fixed QCIF and NTSC preview aspect ratios
+* Created S8 modded lib
+* Enabled ISO changing during recording
+* Enabled Pro Mode for Selfie Cam (buggy/experimental)
+* Added custom mod settings
+  * You can now save all videos as slow motion
+  * Custom audio bitrates
+  * Change video encoder
+  * Change video bitrate
+
 ### 7.6.86-2.1.0
 * Updated the base APK to 7.6.86 (taken from the S7)
 * Added 1080p240
