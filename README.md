@@ -26,6 +26,9 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.86-2.2.1
+* Fixed device detection bugs
+
 ### 7.6.86-2.2.0
 * Fixed UHFR modes for non-S7 devices
 * Made Samsung Gallery recognize UHFR videos as Slow Motion
