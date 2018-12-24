@@ -100,13 +100,6 @@
     <!-- Recording resolution - FRONT -->
     <local name="FRONT_CAMERA_RECORDING_DEFAULT_RESOLUTION" value="1920x1080"/>
     <local name="FRONT_CAMERA_RECORDING_MIN_RESOLUTION" value="640x480"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="2592x1458" vdis="false" effect="false" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_1920X1080" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_1440X1440" value="true" hdr="true" preview-size="1072x1072" snapshot-support="true" snapshot-size="1936x1936" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_1280X720" value="true" hdr="true" preview-size="1280x720" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="720x480" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="4032x3024" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_640X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true"  snapshot-size="2592x1944" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
     <local name="FRONT_CAMCORDER_RESOLUTION_176X144" value="true"/>
 
     <!-- Phase AF in FHD 60FPS -->
@@ -118,7 +111,7 @@
     <!-- Camera related features -->
 
     <!-- Performance feature -->
-    <local name="SUPPORT_MULTI_INSTANCE_CAMERA" value="false"/> <!-- temporary disable -->
+    <local name="SUPPORT_MULTI_INSTANCE_CAMERA" value="false"/> <!-- samsung says this is "temporary disable" but i dont trust them, its been disabled since the beginning of ages -->
     <local name="ANTI_FOG_PREVIEW_FPS_MAX" value="24000"/>
 
     <!-- Thermistor Temperature - Only JPN used -->
@@ -131,6 +124,10 @@
     <local name="SUPPORT_FACE_AR" value="true"/>
     <local name="SUPPORT_STAMP" value="true"/>
     <local name="SUPPORT_WATERMARK" value="true"/>
+    <local name="OVERLAY_HELP_SELFIE_CAPTURE_IMAGE_NAME" value="camera_overlayhelp_effect_front_great"/>
+    <local name="SUPPORT_DOWNLOAD_BUTTON_IN_LIST" value="true"/>
+    <local name="EFFECT_STICKER_MENU_SEPARATED" value="true"/>
+    <local name="SUPPORT_MY_EMOJI" value="true"/>
 
     <!-- LDU. features -->
     <local name="SUPPORT_GUIDE_TEXT_FOR_AUTO_FOCUS" value="true"/>

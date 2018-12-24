@@ -72,14 +72,6 @@ device_check() {
   fi
 }
 
-if ! soc_check "exynos5"; then
-  abort "This module is only compatible with Exynos based devices."
-fi
-
-if ! version_check "26"; then
-  abort "This module is only compatible with Android 8.0.0."
-fi
-
 ui_print ""
 
 if keytest; then
@@ -95,8 +87,55 @@ else
   $FUNCTION "DOWN"
 fi
 
+#compatibility checks
+if ! soc_check "exynos5"; then
+  ui_print " "
+  ui_print "- Select Option -"
+  ui_print "  Incompatible SOC detected"
+  ui_print "  Are you sure you want to continue?"
+  ui_print ""
+  ui_print "  This module is only compatible with"
+  ui_print "  Exynos based Samsung devices"
+  ui_print ""
+  ui_print "   Vol Up = Yes, Vol Down = No"
+  if ! $FUNCTION; then 
+    abort "Aborting installation"
+  fi
+fi
+
+if ! version_check "26"; then
+  ui_print " "
+  ui_print "- Select Option -"
+  ui_print "  Incompatible Android version detected"
+  ui_print "  Are you sure you want to continue?"
+  ui_print ""
+  ui_print "  This module is only compatible with"
+  ui_print "  Android 8.0.0 Oreo"
+  ui_print ""
+  ui_print "   Vol Up = Yes, Vol Down = No"
+  if ! $FUNCTION; then 
+    abort "Aborting installation"
+  fi
+fi
+
+if [ -f /system/priv-app/SamsungCamera8/SamsungCamera8.apk ]; then
+  ui_print " "
+  ui_print "- Select Option -"
+  ui_print "  Samsung Camera 8 detected"
+  ui_print "  Are you sure you want to continue?"
+  ui_print ""
+  ui_print "  This might mean that your device"
+  ui_print "  is too new to use this module"
+  ui_print ""
+  ui_print "   Vol Up = Yes, Vol Down = No"
+  if ! $FUNCTION; then 
+    abort "Aborting installation"
+  fi
+fi
+
 #device checks
 FINISH=FALSE
+MODLIB=none
 
 if device_check "herolte" || device_check "hero2lte"; then
   ui_print " "
@@ -113,9 +152,7 @@ if device_check "herolte" || device_check "hero2lte"; then
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     MODLIBALTAPK=false
-    MODLIBS7=true
-    MODLIBS8=false
-    MODLIBN8=false
+    MODLIB=S7
     SEIGHT=false
     NEIGHT=false
     SEIGHTSELFIE=false
@@ -140,9 +177,7 @@ if device_check "dreamlte" || device_check "dream2lte"; then
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     MODLIBALTAPK=false
-    MODLIBS7=false
-    MODLIBS8=true
-    MODLIBN8=false
+    MODLIB=S8
     SEIGHT=true
     NEIGHT=false
     SEIGHTSELFIE=true
@@ -167,9 +202,7 @@ if device_check "greatlte"; then
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     MODLIBALTAPK=false
-    MODLIBS7=false
-    MODLIBS8=false
-    MODLIBN8=true
+    MODLIB=N8
     SEIGHT=true
     NEIGHT=true
     SEIGHTSELFIE=true
@@ -193,9 +226,7 @@ if ! $FINISH; then
     ui_print "   Vol Up = S7, Vol Down = Other (S8/N8)"
     if $FUNCTION; then 
       MODLIBALTAPK=false
-      MODLIBS7=true
-      MODLIBS8=false
-      MODLIBN8=false
+      MODLIB=S7
     else 
       ui_print " "
       ui_print "- Select Option -"
@@ -203,14 +234,10 @@ if ! $FINISH; then
       ui_print "   Vol Up = S8, Vol Down = Note 8"
       if $FUNCTION; then 
         MODLIBALTAPK=false
-        MODLIBS7=false
-        MODLIBS8=true
-        MODLIBN8=false
+        MODLIB=S8
       else 
         MODLIBALTAPK=false
-        MODLIBS7=false
-        MODLIBS8=false
-        MODLIBN8=true
+        MODLIB=N8
       fi
     fi
   else 
@@ -243,6 +270,7 @@ if ! $FINISH; then
   ui_print " "
   ui_print "- Select Option -"
   ui_print "   Do you want to enable dual camera lens support?"
+  ui_print "(Disable unless you have the Note 8)"
   ui_print "   Vol Up = Yes, Vol Down = No"
   if $FUNCTION; then 
     NEIGHT=true
@@ -268,24 +296,18 @@ ui_print "= Installing ="
 ui_print "=============="
 ui_print ""
 
-if $MODLIBS7; then
-  ui_print "Installing Samsung Galaxy S7 modded libexynoscamera.so"
-  cp -f $INSTALLER/device_specific/S7/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
+if [ "$MODLIB" != "none" ]; then
+  ui_print "Installing Samsung Galaxy $MODLIB modded libexynoscamera.so"
+  cp -f "$INSTALLER/device_specific/$MODLIB/system/lib/libexynoscamera.so"  "$INSTALLER/system/lib/libexynoscamera.so"
 else
-  if $MODLIBS8; then
-    ui_print "Installing Samsung Galaxy S8 modded libexynoscamera.so"
-    cp -f $INSTALLER/device_specific/S8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
-  else
-    if $MODLIBN8; then
-      ui_print "Installing Samsung Galaxy Note 8 modded libexynoscamera.so"
-      cp -f $INSTALLER/device_specific/N8/system/lib/libexynoscamera.so  $INSTALLER/system/lib/libexynoscamera.so
-    fi
-  fi
+  ui_print "Skipping modded lib instalation"
 fi
 
 if $MODLIBALTAPK; then
   ui_print "Installing alternate APK with modded lib features disabled"
   cp -f $INSTALLER/device_specific/nolibapk/SamsungCamera7.apk  $INSTALLER/system/priv-app/SamsungCamera7/SamsungCamera7.apk
+else
+  ui_print "Installing normal APK with all features enabled"
 fi
 
 if $SEIGHT; then
@@ -294,6 +316,8 @@ if $SEIGHT; then
     <local name="BACK_CAMCORDER_RESOLUTION_1920X936" value="true" hdr="true" preview-size="1920x936" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
     <local name="FRONT_CAMERA_RESOLUTION_18DOT5BY9" value="3264x1592" />
     <local name="BACK_CAMERA_RESOLUTION_18DOT5BY9" value="4032x1960" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+else
+  ui_print "Disabling 18.5:9 support"
 fi
 
 if $SEIGHTSELFIE; then
@@ -302,14 +326,28 @@ if $SEIGHTSELFIE; then
     <local name="FRONT_CAMERA_RESOLUTION_4BY3_LARGE" value="3264x2448" />
     <local name="FRONT_CAMERA_RESOLUTION_1BY1_LARGE" value="2448x2448" />
     <local name="FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="3264x2448" />
-    <local name="SUPPORT_FRONT_AF" value="true" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+    <local name="SUPPORT_FRONT_AF" value="true" />
+    <local name="FRONT_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="3264x1836" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1920X1080" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="3264x1836" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1440X1440" value="true" hdr="true" preview-size="1072x1072" snapshot-support="true" snapshot-size="2448x2448" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1280X720" value="true" hdr="true" preview-size="1280x720" snapshot-support="true" snapshot-size="3264x1836" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="720x480" snapshot-support="true" snapshot-size="3264x2448" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="3264x2448" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_640X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true"  snapshot-size="3264x2448" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
 else
   ui_print "Using Galaxy S7 settings for the front facing camera (Autofocus disabled + 5 MP)"
   echo '    <local name="FRONT_CAMERA_RESOLUTION_16BY9_LARGE" value="2592x1458" />
     <local name="FRONT_CAMERA_RESOLUTION_4BY3_LARGE" value="2592x1944" />
     <local name="FRONT_CAMERA_RESOLUTION_1BY1_LARGE" value="1936x1936" />
     <local name="FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="2592x1944" />
-    <local name="SUPPORT_FRONT_AF" value="false" />' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+    <local name="SUPPORT_FRONT_AF" value="false" />
+    <local name="FRONT_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="2592x1458" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1920X1080" value="true" hdr="true" preview-size="1920x1080" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1440X1440" value="true" hdr="true" preview-size="1072x1072" snapshot-support="true" snapshot-size="1936x1936" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_1280X720" value="true" hdr="true" preview-size="1280x720" snapshot-support="true" snapshot-size="2592x1458" vdis="true" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_720X480" value="true" hdr="true" preview-size="720x480" snapshot-support="true" snapshot-size="2592x1944" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_320X240" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true" snapshot-size="2592x1944" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
+    <local name="FRONT_CAMCORDER_RESOLUTION_640X480" value="true" hdr="true" preview-size="1440x1080" snapshot-support="true"  snapshot-size="2592x1944" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>' >> $INSTALLER/system/cameradata/camera-feature-v7.xml
 fi
 
 if $NEIGHT; then
@@ -319,6 +357,8 @@ if $NEIGHT; then
     <local name=\"SUPPORT_DUAL_SEAMLESS_ZOOM\" value=\"true\"/>
     <local name=\"SUPPORT_ZOOM_IN_OUT_PHOTO\" value=\"true\"/>
     <local name=\"SUPPORT_JUMP_ZOOM_BUTTON\" value=\"true\"/>" >> $INSTALLER/system/cameradata/camera-feature-v7.xml
+else
+  ui_print "Disabling Dual Camera Features"
 fi
 
 echo '</resources>' >> $INSTALLER/system/cameradata/camera-feature-v7.xml

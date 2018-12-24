@@ -26,6 +26,18 @@
 * Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
 
 ## Changelog
+### 7.6.86-2.2.2
+* Enabled some region/CSC specific features
+  * Enabled Anti-fog mode
+  * Enabled shutter sound toggle
+* Fixed effect UHD 30 FPS recording
+* Fixed UHD 48 FPS recording
+* Fixed S8/N8 unable to record selfie cam video bug
+* Fixed non-functional 720x480 and 320x240 on the S7 selfie cam
+* Made the module replace Samsung Camera 8 too
+* Started distributing the LVB APK - Live Broadcast mode enabled
+* Enabled AR Emoji
+
 ### 7.6.86-2.2.1
 * Fixed device detection bugs
 
