@@ -1,7 +1,7 @@
 # 4k60 Camera Mod
 ### For Samsung Exynos devices
 
-[Telegram Group](https://t.me/note8_4K60FPS)
+[Telegram Group](https://t.me/note8_4K60FPS) | [Telegram Channel (Update Announcements)](https://t.me/s7cammod)
 
 ## Features:
 * UHD @ 60 FPS, QHD @ 120 FPS and more custom resolutions
@@ -16,6 +16,7 @@
 * Enable HDR in UHD resolutions
 * Remove Low Battery Flash Limit at 15%.
 * Change Quick Launch Key from Home to Power in the settings and vice-versa
+* Remove the UHD 10 minutes recording limit
 
 ## How to install:
 * Install the zip
@@ -23,9 +24,25 @@
 
 ## Compatibility
 * Magisk 17+
-* Most Exynos based Samsung devices running a Samsung Experience Android 8.0.0 Oreo ROM
+* Samsung Experience based ROM required
+* Officially supported devices:
+  * Full support
+    * Samsung Galaxy S7 (Edge)
+    * Samsung Galaxy S8(+)
+    * Samsung Galaxy Note 8
+* Not supported at all (mod doesn't work):
+  * Samsung Galaxy S9
+  * Samsung Galaxy Note 9
+* All devices with different sensor resolution than 4032x3024 require a manual modification of /system/cameradata/camera-features-v7.xml at the moment
 
 ## Changelog
+### 7.6.86-2.2.3
+* Removed the S8/N8 UHD and FHD 60 FPS 10 mins limit
+* Fixed the "Save as slow motion" option
+* Fixed the 100 Mbps and 256 Kbps video/audio bitrate caps
+* Added QHD 60 FPS
+* Improved automatic device detection
+
 ### 7.6.86-2.2.2
 * Enabled some region/CSC specific features
   * Enabled Anti-fog mode
