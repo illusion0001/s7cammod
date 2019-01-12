@@ -36,6 +36,9 @@
 * All devices with different sensor resolution than 4032x3024 require a manual modification of /system/cameradata/camera-features-v7.xml at the moment
 
 ## Changelog
+### 7.6.86-2.2.4.1
+* Fixed a different Save as slow motion bug
+
 ### 7.6.86-2.2.4
 * Fixed UHFR only slow motion saving
 * Device detection fixes
