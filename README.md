@@ -36,6 +36,11 @@
 * All devices with different sensor resolution than 4032x3024 require a manual modification of /system/cameradata/camera-features-v7.xml at the moment
 
 ## Changelog
+### 7.6.86-2.2.4
+* Fixed UHFR only slow motion saving
+* Device detection fixes
+* Other minor fixes & improvements
+
 ### 7.6.86-2.2.3
 * Removed the S8/N8 UHD and FHD 60 FPS 10 mins limit
 * Fixed the "Save as slow motion" option

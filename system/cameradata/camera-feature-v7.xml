@@ -60,7 +60,7 @@
     <local name="BACK_CAMERA_RESOLUTION_4BY3_SMALL" value="1440x1080" />
     <local name="BACK_CAMERA_RESOLUTION_1BY1_LARGE" value="3024x3024" />
     <local name="BACK_CAMERA_RESOLUTION_1BY1_MEDIUM" value="2160x2160" />
-    <!--<local name="BACK_CAMERA_RESOLUTION_1BY1_SMALL" value="4032x2688" />-->
+    <local name="BACK_CAMERA_RESOLUTION_1BY1_SMALL" value="4032x2688" />
     <local name="BACK_CAMERA_PICTURE_DEFAULT_RESOLUTION" value="4032x3024" />
 
     <!-- Capture resolution - FRONT -->

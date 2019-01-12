@@ -145,7 +145,7 @@ if device_check "herolte" || device_check "hero2lte"; then
   ui_print "      (Recommended)"
   ui_print ""
   ui_print "    -     libexynoscamera.so mod: Enabled (S7)"
-  ui_print "    -  18.5:9 resolution support: Enabled"
+  ui_print "    -  18.5:9 resolution support: Disabled"
   ui_print "    -   Dual camera lens support: Disabled"
   ui_print "    - 8MP + Autofocus selfie cam: Disabled"
   ui_print ""
@@ -153,7 +153,7 @@ if device_check "herolte" || device_check "hero2lte"; then
   if $FUNCTION; then 
     MODLIBALTAPK=false
     MODLIB=S7
-    SEIGHT=true
+    SEIGHT=false
     NEIGHT=false
     SEIGHTSELFIE=false
     FINISH=true
