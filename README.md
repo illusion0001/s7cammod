@@ -16,18 +16,19 @@
 * Enable HDR in UHD resolutions
 * Remove Low Battery Flash Limit at 15%.
 * Change Quick Launch Key from Home to Power in the settings and vice-versa
-* Remove the UHD 10 minutes recording limit
+* Remove the UHD/FHD (60 fps) 10 minutes recording limit
 
 ## How to install:
 * Install the zip
 * Clear ShootingModeProvider's data if you have any issues
 
 ## Compatibility
-* Magisk 17+
-* Samsung Experience based ROM required
+* Magisk 18+
+* Samsung Experience/OneUI based ROM required
 * Officially supported devices:
   * Full support
     * Samsung Galaxy S7 (Edge)
+    * Samsung Galaxy Note 7/FE
     * Samsung Galaxy S8(+)
     * Samsung Galaxy Note 8
 * Not supported at all (mod doesn't work):
@@ -35,7 +36,15 @@
   * Samsung Galaxy Note 9
 * All devices with different sensor resolution than 4032x3024 require a manual modification of /system/cameradata/camera-features-v7.xml at the moment
 
+## Special thanks to
+* @M132 for spending nights with me reverse engineering the APK and libraries
+
 ## Changelog
+### 7.6.86-3.0.0
+* Android 9 Pie compatibility update
+* Added the Note FE to the official devices list
+* Unity 4.0 update
+
 ### 7.6.86-2.2.4.2
 * 48 FPS fix
 
