@@ -43,6 +43,7 @@
 ### 7.6.86-3.0.1
 * Installer improvements
 * Better device detection
+* Re-added front 18.5:9 video mode
 
 ### 7.6.86-3.0.0
 * Android 9 Pie compatibility update
