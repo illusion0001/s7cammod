@@ -1,7 +1,7 @@
 # 4k60 Camera Mod
 ### For Samsung Exynos devices
 
-[Telegram Group](https://t.me/note8_4K60FPS) | [Telegram Channel (Update Announcements)](https://t.me/s7cammod)
+[Telegram Group](https://t.me/Exynos_4K60FPS) | [Telegram Channel (Update Announcements)](https://t.me/s7cammod)
 
 ## Features:
 * UHD @ 60 FPS, QHD @ 120 FPS and more custom resolutions
