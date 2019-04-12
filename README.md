@@ -40,6 +40,10 @@
 * @M132 for spending nights with me reverse engineering the APK and libraries
 
 ## Changelog
+### 7.6.86-3.0.1
+* Installer improvements
+* Better device detection
+
 ### 7.6.86-3.0.0
 * Android 9 Pie compatibility update
 * Added the Note FE to the official devices list
