@@ -40,6 +40,11 @@
 * @M132 for spending nights with me reverse engineering the APK and libraries
 
 ## Changelog
+### 7.6.86-3.0.2
+* Added a JPEG quality slider
+* Fixed front 18.5:9 video mode
+* Merged the no-lib APK with the standard one
+
 ### 7.6.86-3.0.1
 * Installer improvements
 * Better device detection

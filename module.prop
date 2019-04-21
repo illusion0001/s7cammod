@@ -1,6 +1,6 @@
 id=s7cammod
 name=Samsung 4k60 Camera Mod
-version=7.6.86-3.0.1
-versionCode=20190412
+version=7.6.86-3.0.2
+versionCode=20190422
 author=Cvolton
 description=Enable UHD @ 60 FPS, QHD @ 120 FPS, HEVC, up to 6400 ISO and 90 seconds shutter speed on Exynos based Samsung devices (OREO/PIE)

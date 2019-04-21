@@ -268,10 +268,11 @@ else
 fi
 
 if $SETTINGS_APK_NODEVICESPECIFIC; then
-  ui_print "Installing alternate APK with modded lib features disabled"
-  cp -f $TMPDIR/device_specific/nolibapk/SamsungCamera7.apk  $TMPDIR/system/priv-app/SamsungCamera7/SamsungCamera7.apk
+  ui_print "Disabling modded lib features"
+  echo "<local name=\"SUPPORT_MOD_SLOW_SHUTTER\" value=\"false\" />" >> $TMPDIR/system/cameradata/camera-feature-v7.xml
 else
-  ui_print "Installing normal APK with all features enabled"
+  ui_print "Enabling modded lib features"
+  echo "<local name=\"SUPPORT_MOD_SLOW_SHUTTER\" value=\"true\" />" >> $TMPDIR/system/cameradata/camera-feature-v7.xml
 fi
 
 if [ "$SETTINGS_FRONT_PARAMETERS_S8" = "Enabled" ]; then
@@ -296,7 +297,7 @@ echo "  <local name=\"FRONT_CAMERA_RESOLUTION_16BY9_LARGE\" value=\"${FRONT_16by
   <local name=\"FRONT_CAMERA_RESOLUTION_4BY3_LARGE\" value=\"${FRONT_4by3_RESOLUTION}\" />
   <local name=\"FRONT_CAMERA_RESOLUTION_1BY1_LARGE\" value=\"${FRONT_1by1_RESOLUTION}\" />
   <local name=\"FRONT_CAMERA_PICTURE_DEFAULT_RESOLUTION\" value=\"${FRONT_4by3_RESOLUTION}\" />
-  <local name=\"SUPPORT_FRONT_AF\" value=\"${FRONAF}\" />
+  <local name=\"SUPPORT_FRONT_AF\" value=\"${FRONT_SUPPORT_AF}\" />
   <local name=\"FRONT_CAMCORDER_RESOLUTION_2560X1440\" value=\"true\" hdr=\"true\" preview-size=\"2560x1440\" snapshot-support=\"true\" snapshot-size=\"${FRONT_16by9_RESOLUTION}\" vdis=\"false\" effect=\"true\" object-tracking=\"false\" seamless-zoom-support=\"false\"/>
   <local name=\"FRONT_CAMCORDER_RESOLUTION_1920X1080\" value=\"true\" hdr=\"true\" preview-size=\"1920x1080\" snapshot-support=\"true\" snapshot-size=\"${FRONT_16by9_RESOLUTION}\" vdis=\"true\" effect=\"true\" object-tracking=\"false\" seamless-zoom-support=\"false\"/>
   <local name=\"FRONT_CAMCORDER_RESOLUTION_1440X1440\" value=\"true\" hdr=\"true\" preview-size=\"1072x1072\" snapshot-support=\"true\" snapshot-size=\"${FRONT_1by1_RESOLUTION}\" vdis=\"false\" effect=\"true\" object-tracking=\"false\" seamless-zoom-support=\"false\"/>
@@ -307,11 +308,11 @@ echo "  <local name=\"FRONT_CAMERA_RESOLUTION_16BY9_LARGE\" value=\"${FRONT_16by
 
 if [ "$SETTINGS_SUPPORT_18by9" = "Enabled" ]; then
   ui_print "Enabling 18.5:9 support"
-  echo '<local name="BACK_CAMCORDER_RESOLUTION_2224X1080" value="true" hdr="true" preview-size="2224x1080" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
-    <local name="FRONT_CAMCORDER_RESOLUTION_2224X1080" value="true" hdr="true" preview-size="2224x1080" snapshot-support="true" snapshot-size="${FRONT_18by9_RESOLUTION}" vdis="true" effect="true" object-tracking="true"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_1920X936" value="true" hdr="true" preview-size="1920x936" snapshot-support="true" snapshot-size="4032x1960" vdis="true" effect="true" object-tracking="true"/>
-    <local name="FRONT_CAMERA_RESOLUTION_18DOT5BY9" value="${FRONT_18by9_RESOLUTION}" />
-    <local name="BACK_CAMERA_RESOLUTION_18DOT5BY9" value="4032x1960" />' >> $TMPDIR/system/cameradata/camera-feature-v7.xml
+  echo "<local name=\"BACK_CAMCORDER_RESOLUTION_2224X1080\" value=\"true\" hdr=\"true\" preview-size=\"2224x1080\" snapshot-support=\"true\" snapshot-size=\"4032x1960\" vdis=\"true\" effect=\"true\" object-tracking=\"true\"/>
+    <local name=\"FRONT_CAMCORDER_RESOLUTION_2224X1080\" value=\"true\" hdr=\"true\" preview-size=\"2224x1080\" snapshot-support=\"true\" snapshot-size=\"${FRONT_18by9_RESOLUTION}\" vdis=\"true\" effect=\"true\" object-tracking=\"true\"/>
+    <local name=\"BACK_CAMCORDER_RESOLUTION_1920X936\" value=\"true\" hdr=\"true\" preview-size=\"1920x936\" snapshot-support=\"true\" snapshot-size=\"4032x1960\" vdis=\"true\" effect=\"true\" object-tracking=\"true\"/>
+    <local name=\"FRONT_CAMERA_RESOLUTION_18DOT5BY9\" value=\"${FRONT_18by9_RESOLUTION}\" />
+    <local name=\"BACK_CAMERA_RESOLUTION_18DOT5BY9\" value=\"4032x1960\" />" >> $TMPDIR/system/cameradata/camera-feature-v7.xml
 else
   ui_print "Disabling 18.5:9 support"
 fi
