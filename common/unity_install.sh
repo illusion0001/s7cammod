@@ -262,6 +262,7 @@ ui_print ""
 
 if [ "$SETTINGS_DEVICESPECIFIC" != "none" ]; then
   ui_print "Installing Samsung Galaxy $SETTINGS_DEVICESPECIFIC modded libexynoscamera.so"
+  mkdir $TMPDIR/system/lib
   cp -f "$TMPDIR/device_specific/$SETTINGS_DEVICESPECIFIC/system/lib/libexynoscamera.so"  "$TMPDIR/system/lib/libexynoscamera.so"
 else
   ui_print "Skipping modded lib instalation"

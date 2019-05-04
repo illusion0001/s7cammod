@@ -40,6 +40,17 @@
 * @M132 for spending nights with me reverse engineering the APK and libraries
 
 ## Changelog
+### 7.6.86-3.0.3
+* Fixed Animated GIF on Pie
+* Fixed Sound & shot on Pie
+* Fixed the UHD 30/FHD 60 10 mins limit bypass in Pro mode
+* Enabled EIS in UHD 30
+* Removed the Live Broadcast mode, since it doesn't work properly anymore
+* Disabled other broken shooting modes
+* Disabled all shooting modes that were just a weird copy of Auto
+  * Sports is still enabled, because according to Samsung, it's important
+* A few other optimizations
+
 ### 7.6.86-3.0.2
 * Added a JPEG quality slider
 * Fixed front 18.5:9 video mode

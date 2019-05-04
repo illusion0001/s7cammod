@@ -2,54 +2,59 @@
 <resources>
     <!-- Shootingmode - BACK -->
     <local name="BACK_CAMERA_SHOOTINGMODE_ANIMATEDGIF" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_ANTI_FOG" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_AUTO" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_AQUA" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_BEAUTY_SHOT" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_CONTINUOUS_SHOT" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_CONTINUOUS_SHOT" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_DUAL" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_FAST_MOTION" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_FAST_MOTION" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_FOOD" value="true" />
     <local name="BACK_CAMERA_SHOOTINGMODE_HYPER_MOTION" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_LVB" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_LVB" value="true" />-->
+    <local name="BACK_CAMERA_SHOOTINGMODE_MIRROR_SELFIE" value="true" />
     <local name="BACK_CAMERA_SHOOTINGMODE_MOTION_PANORAMA" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_NIGHT_SHOT" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SCENE" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_PANORAMA" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_PANORAMA_SHOT" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_PRO" value="true" /> <!-- I could also enable ProLite, but there's no point in that, since it's just Pro with less features and I'd have to do more work getting custom framerates to work -->
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_NIGHT_SHOT" value="true" />-->
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SCENE" value="true" />-->
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SINGLE" value="true" />-->
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_PANORAMA_SHOT" value="true" />-->
+    <local name="BACK_CAMERA_SHOOTINGMODE_PRO" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_PRO_LITE" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_REAR_SELFIE" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_RICH_TONE" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_SELECTIVE_FOCUS" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_SHOT_AND_MORE" value="false" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_SHOT_AND_MORE" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_SLOW_MOTION" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_SNOW_SCENE" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_SOCIAL" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_SOCIAL" value="true" />-->
     <local name="BACK_CAMERA_SHOOTINGMODE_SOUND_AND_SHOT" value="true" />
     <local name="BACK_CAMERA_SHOOTINGMODE_SPORTS_SCENE" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_SUNSET_SCENE" value="true" />
     <local name="BACK_CAMERA_SHOOTINGMODE_SUPER_SLOW_MOTION" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_THEATRE_SCENE" value="true" />
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_TAG_SHOT" value="true" />-->
+    <local name="BACK_CAMERA_SHOOTINGMODE_VIDEO_COLLAGE" value="true" />
     <local name="BACK_CAMERA_SHOOTINGMODE_VIRTUAL_SHOT" value="true" />
-    <local name="BACK_CAMERA_SHOOTINGMODE_WECHAT_VIDEO" value="true" />
+
+    <!--<local name="BACK_CAMERA_SHOOTINGMODE_TELE_PRO" value="true" />-->
 
     <!-- Shootingmode - FRONT -->
     <local name="FRONT_CAMERA_SHOOTINGMODE_ANIMATEDGIF" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_AUTO" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_BEAUTY_SHOT" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_CONTINUOUS_SHOT" value="true" />
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_CONTINUOUS_SHOT" value="true" />-->
+    <local name="FRONT_CAMERA_SHOOTINGMODE_DUAL" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_LVB" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_MOTION_WIDE_SELFIE" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SCENE" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_PRO" value="true" /> <!-- prolite doesn't exist here because i never made it -->
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT" value="true" />-->
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SCENE" value="true" />-->
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_NIGHT_SHOT_SINGLE" value="true" />-->
+    <local name="FRONT_CAMERA_SHOOTINGMODE_PRO" value="true" />
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_RICH_TONE" value="true" />-->
     <local name="FRONT_CAMERA_SHOOTINGMODE_SELECTIVE_FOCUS" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_SELFIE" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_SHOT_AND_MORE" value="false" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_SOCIAL" value="true" />
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_SHOT_AND_MORE" value="true" />-->
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_SOCIAL" value="true" />-->
     <local name="FRONT_CAMERA_SHOOTINGMODE_SOUND_AND_SHOT" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_VIDEO_COLLAGE" value="true" />
     <local name="FRONT_CAMERA_SHOOTINGMODE_VIRTUAL_SHOT" value="true" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_WIDE_SELFIE" value="false" />
-    <local name="FRONT_CAMERA_SHOOTINGMODE_WIDE_SELFIE_LITE" value="false" />
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_WIDE_SELFIE" value="true" />-->
+    <!--<local name="FRONT_CAMERA_SHOOTINGMODE_WIDE_SELFIE_LITE" value="true" />-->
     
     <!-- Capture resolution - BACK -->
     <local name="BACK_CAMERA_RESOLUTION_16BY9_LARGE" value="4032x2268" />
@@ -68,7 +73,7 @@
     <!-- Recording resolution - BACK -->
     <local name="BACK_CAMERA_RECORDING_DEFAULT_RESOLUTION" value="1920x1080"/>
     <local name="BACK_CAMERA_RECORDING_MIN_RESOLUTION" value="640x480"/>
-    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="true"  seamless-zoom-support="true"/>
+    <local name="BACK_CAMCORDER_RESOLUTION_3840X2160" value="true" hdr="true" preview-size="3840x2160" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true"  seamless-zoom-support="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_2560X1440" value="true" hdr="true" preview-size="2560x1440" snapshot-support="true" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true"  seamless-zoom-support="true"/>
     <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_60FPS" value="true" hdr="false" preview-size="1920x1080" snapshot-support="false" snapshot-size="4032x2268" vdis="true" effect="true" object-tracking="true" seamless-zoom-support="false"/>
     <local name="BACK_CAMCORDER_RESOLUTION_1920X1080_120FPS" value="true" hdr="false" preview-size="1280x720" snapshot-support="false" snapshot-size="4032x2268" vdis="false" effect="true" object-tracking="false" seamless-zoom-support="false"/>
@@ -107,7 +112,7 @@
     <!-- Camera related features -->
 
     <!-- Performance feature -->
-    <local name="SUPPORT_MULTI_INSTANCE_CAMERA" value="false"/> <!-- samsung says this is "temporary disable" but i dont trust them, its been disabled since the beginning of ages -->
+    <local name="SUPPORT_MULTI_INSTANCE_CAMERA" value="false"/> <!-- permanent disable -->
     <local name="ANTI_FOG_PREVIEW_FPS_MAX" value="24000"/>
 
     <!-- Thermistor Temperature - Only JPN used -->
