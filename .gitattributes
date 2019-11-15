@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.sh text eol=lf
+*.prop text eol=lf
+*.xml text eol=lf
+update-binary text eol=lf
+updater-script text eol=lf
