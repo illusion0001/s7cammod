@@ -40,6 +40,9 @@
 * @M132 for spending nights with me reverse engineering the APK and libraries
 
 ## Changelog
+### 7.6.86-3.0.4
+* Unity 4.4 update
+
 ### 7.6.86-3.0.3
 * Fixed Animated GIF on Pie
 * Fixed Sound & shot on Pie
